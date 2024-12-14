@@ -8,5 +8,85 @@
 <body>
     
     <h2>repo test again</h2>
+
+    <div>
+        <pre>
+<h3>notun kore jodi github accout khular pore token setup kora lage tkn hoito (403) error dite pare tkn ja koronio: </h3>
+
+
+<pre>
+    403 ত্রুটিটি এখনও দেখাচ্ছে কারণ GitHub আপনাকে mmtsahil/repo.git রিপোজিটরিতে পুশ করার অনুমতি দিচ্ছে না। এটি হয় অ্যাকাউন্ট মিসম্যাচ, বা অনুমতির অভাব (collaborator হিসেবে যোগ করা হয়নি) অথবা আপনার Personal Access Token (PAT) সঠিকভাবে ব্যবহার করা হয়নি।
+
+    Personal Access Token (PAT) ব্যবহার করার সঠিক পদ্ধতি:
+    1. Remote URL-এ Token ব্যবহার করুন:
+    git push করার সময় Personal Access Token দিয়ে লগইন করতে হবে। Remote URL-এ টোকেন সরাসরি যোগ করুন।
+    
+    ধাপে ধাপে:
+    প্রথমে আপনার Remote URL-এ টোকেন যোগ করুন:
+    
+<!-- 
+   Copy korun code  -->
+    git remote set-url origin https://<username>:<personal_access_token>@github.com/<username>/<repository>.git
+    উদাহরণ:
+    
+ <!-- 
+   Copy korun code  -->
+    git remote set-url origin https://mmtsahil:ghp_abcdefgh1234567890@github.com/mmtsahil/repo.git
+    তারপর, পুশ করার চেষ্টা করুন:
+    
+<!-- 
+   Copy korun code  -->
+    git push -u origin main
+    2. Token সংরক্ষণ করুন (Credential Helper):
+    আপনার টোকেন বারবার না দিতে হয়, তাই GitHub ক্রেডেনশিয়াল ক্যাশ করার ব্যবস্থা আছে। এটি সেট করতে:
+    
+    Credential Helper চালু করুন:
+  <!-- 
+   Copy korun code  -->
+    git config --global credential.helper manager-core
+    তারপর git push কমান্ড দিন। প্রথমবার টোকেন চাইলে সঠিক Personal Access Token প্রবেশ করান। এরপর এটি ক্যাশ হয়ে থাকবে।
+    
+    3. Cached Credentials Clear করুন (যদি ভুল থাকে):
+    আগে যদি অন্য কোনো GitHub অ্যাকাউন্টের credentials ক্যাশ করে থাকেন, সেগুলো মুছে দিন:
+    
+    Windows এ:
+    Credential Manager-এ গিয়ে git:https://github.com এন্ট্রি মুছে দিন।
+    Windows Search Bar-এ "Credential Manager" লিখুন এবং এটি খুলুন।
+    "Windows Credentials" বা "Generic Credentials" ট্যাবে গিয়ে git:https://github.com এন্ট্রি খুঁজুন।
+    সেটি রিমুভ করুন।
+    Command দিয়ে:
+<!-- 
+   Copy korun code  -->
+    git credential-cache exit
+    4. Collaborator Access নিশ্চিত করুন:
+    যদি আপনি mmtsahil অ্যাকাউন্টের মালিক না হন এবং রিপোজিটরি অন্য কেউ তৈরি করে থাকে, তাহলে রিপোজিটরি মালিকের কাছে গিয়ে আপনাকে collaborator হিসেবে যোগ করার জন্য বলুন।
+    
+    নতুন Token দিয়ে Push করার ধাপ রিক্যাপ:
+    Remote URL চেক করুন:
+    
+<!-- 
+   Copy korun code  -->
+    git remote -v
+    নিশ্চিত করুন URL সঠিক:
+    
+ <!-- 
+   Copy korun code  -->
+    origin  https://<username>:<personal_access_token>@github.com/<username>/<repository>.git
+    Push করুন:
+<!-- 
+   Copy korun code  -->
+    git push -u origin main
+    
+
+
+</pre>
+
+
+<!-- or niser ta lika chat gpt te search krolei solution dibe. -->
+"GitHub 403 error while pushing" বা "unable to push to GitHub repository," etar somodan daw banglai
+        </pre>
+
+    </div>
+
 </body>
 </html>
